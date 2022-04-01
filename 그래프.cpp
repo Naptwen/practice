@@ -5,7 +5,7 @@
 using namespace std;
 
 struct b{
-    int id;
+    int v = 0;
     vector<int> child;
 };
 
@@ -15,7 +15,8 @@ int solution(int n, vector<vector<int>> results) {
         r[v[0] - 1].child.push_back(v[1] - 1); //이긴 경기
     }
     for(int i =0; i < r.size(); i++){
-        r.
+        for(auto vec : r[i].child)
+            r[vec].v += 1;
     }
 
     return answer;
