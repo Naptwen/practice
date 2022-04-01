@@ -14,9 +14,9 @@ int solution(int n, vector<vector<int>> results) {
     for(auto v : results){
         r[v[0] - 1].child.push_back(v[1] - 1); //이긴 경기
     }
-    int i = 0;
-    int answer = 0;
-    int s = max_element(r.begin(), r.end()) - r.begin();
+    for(int i =0; i < r.size(); i++){
+        r.
+    }
 
     return answer;
 }
