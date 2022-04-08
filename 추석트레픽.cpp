@@ -7,6 +7,7 @@
 using namespace std;
 
 //level 3 추석 문제 sorting, +1 using some one use sscanf("%d-%d-%d"...)
+//끝나는 시간을 기준으로 정렬후 트래픽의 종료점에 +1초 이범위에 시작시간이 작으면 끝나는 시간순서대로 정렬되어있으므로 포함되는 것읗 이용하여 구한다.
 bool compare(pair<double, double> a, pair<double, double> b){return a.second < b.second;}
 
 int solution(vector<string> lines) {
@@ -33,7 +34,6 @@ int solution(vector<string> lines) {
     sort(time_line.begin(), time_line.end(), compare);
 
     for(int i =0; i < time_line.size(); i++){
-        double j = time_line[i].second;
         int collision = 0;
         for(int k = i; k < time_line.size(); k ++)
             if(time_line[k].first < time_line[i].second + 0.999){
